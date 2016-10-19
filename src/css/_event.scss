@@ -1,0 +1,135 @@
+/* =============================================================================
+ * Podstrona: 'Wydarzenie'
+ * ========================================================================== */
+
+.event {
+  margin-bottom: $margin-m;
+  background: $bg-color4;
+  h3,
+  .event-title {
+    padding: 0 0 3px;
+    color: $color;
+  }
+  a:hover {
+    background: $bg-color5;
+  }
+  &.top {
+    background: $bg-color6;
+    a:hover {
+      background: $bg-color7;
+    }
+  }
+  &:last-child {
+    border-radius: 0 0 $radius $radius;
+  }
+}
+
+.event-header {
+  border-bottom: 1px solid $border-color;
+  padding: $padding-m;
+}
+
+.event-info {
+  color: $color2;
+}
+
+/* =============================================================================
+ * Lista kanalow
+ * ========================================================================== */
+
+ul.channels {
+  li {
+    display: table;
+    width: 100%;
+    padding: $padding-s $padding-m;
+    border-bottom: 1px solid $border-color;
+    .page-event & {
+      padding: 0;
+    }
+    &:last-child {
+      border: none;
+    }
+    &.channel-info {
+      padding: 0.5em 1em;
+      color: $color3;
+    }
+  }
+  a {
+    padding: $padding-s $padding-m;
+  }
+}
+
+.channel-type-1,
+.channel-type-1 a {
+  color: #8d7;
+}
+
+.channel-type-2,
+.channel-type-2 a {
+  color: #5ae;
+}
+
+.channel-type-3,
+.channel-type-3 a {
+  color: #dc9;
+}
+
+.channel-type-4,
+.channel-type-4 a  {
+  color: #d99;
+}
+
+@mixin channel-cell($width) {
+  display: table-cell;
+  width: $width;
+}
+
+.channel-lang {
+  @include channel-cell(2em);
+}
+
+.channel-name {
+  @include channel-cell(10em);
+}
+
+.channel-desc {
+  @include channel-cell(auto);
+}
+
+
+/* =============================================================================
+ * Zakonczone wydarzenie
+ * ========================================================================== */
+
+.ended {
+  img {
+    opacity: 0.2;
+  }
+  * {
+    color: $color3 !important;
+  }
+}
+
+
+/* =============================================================================
+ * 'Podobne wydarzenia' / 'Ciekawe mecze' na stronie glownej
+ * ========================================================================== */
+
+ul.links {
+  a {
+    padding: $padding-m;
+  }
+  li {
+    border-bottom: 1px solid $border-color;
+    &:hover {
+      background: $bg-color4;
+    }
+    &:last-child {
+      border: none;
+      border-radius: 0 0 $radius $radius;
+    }
+  }
+  li:last-child a {
+    border: none;
+  }
+}

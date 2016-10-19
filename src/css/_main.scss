@@ -1,0 +1,156 @@
+/* =============================================================================
+ * Glowne ustawienia
+ * ========================================================================== */
+
+/** {outline: 1px solid blue;}*/
+
+$bg-color: #000;
+$bg-color2: #080a0c;
+$bg-color3: #171c21;
+$bg-color4: #202830;
+$bg-color5: #28323c;
+$bg-color6: #384551;
+$bg-color7: #456;
+
+$color: #fff;
+$color2: #a5b4c3;
+$color3: #506478;
+
+$tv-color: #8d7;
+$tv-color2: #5ae;
+$tv-color3: #dd9;
+$tv-color4: #d99;
+
+$border-color: rgba(255, 255, 255, 0.05);
+
+@mixin border() {
+  border-bottom: 1px solid $border-color;
+}
+
+$margin-m: 1em;
+$margin-l: 2em;
+$padding-s: 0.5em;
+$padding-m: 1em;
+
+$radius: 4px;
+
+$medium-width: 640px;
+$large-width: 850px;
+$xlarge-width: 1100px;
+
+$navbar-height: 50px;
+
+@mixin input-style() {
+  padding: 0.75em;
+  background: $bg-color3;
+  color: $color2;
+  border-radius: $radius;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.25), inset 0 -1px 0px rgba(255, 255, 255, 0.1);
+}
+
+::selection {
+  background: $color2;
+  color: $bg-color;
+}
+
+body {
+  min-width: 320px;
+  max-width: $xlarge-width;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 12px;
+  background: $bg-color2;
+  color: $color2;
+  @media (min-width: $medium-width) {
+    font-size: 14px;
+  }
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: $color2;
+  span.diff {
+    margin-right: 5px;
+    color: $color3;
+  }
+  span.diff-r {
+    color: $color3;
+    margin-left: 5px;
+  }
+  .page-footer & {
+    display: inline;
+    &:hover {
+      color: $color;
+    }
+  }
+}
+
+h1,
+h2,
+h4 {
+  padding: 15px;
+  border-bottom: 1px solid $border-color;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.sidebar {
+  display: none;
+  @media (min-width: $xlarge-width) {
+    display: block;
+    float: left;
+    width: 185px;
+  }
+}
+
+main {
+  @media (min-width: $large-width) {
+    float: left;
+    width: 70%;
+  }
+  @media (min-width: $xlarge-width) {
+    width: 605px;
+  }
+}
+
+aside {
+  margin-bottom: $margin-m;
+}
+
+section {
+  margin-bottom: $margin-l;
+  background: $bg-color3;
+  border-radius: $radius;
+}
+
+small {
+  font-size: 0.75em;
+}
+
+ol {
+  padding: 1em 1em 0.5em 2em;
+  & > li {
+    margin-bottom: 1em;
+  }
+  a {
+    display: inline;
+    text-decoration: underline;
+  }
+}
+
+hr {
+  @include border();
+  margin: 5px 0;
+}
+
+label {
+  display: block;
+}
+
+textarea {
+  @include input-style();
+  max-width: 90%;
+  margin-bottom: $margin-m;
+  background: $bg-color2;
+}

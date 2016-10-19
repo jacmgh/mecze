@@ -1,0 +1,22 @@
+/* =============================================================================
+ * Komunikaty
+ * ========================================================================== */
+
+.info {
+  padding: $padding-m;
+  text-align: center;
+  &:last-child {
+    border-radius: 0 0 $radius $radius;
+  }
+}
+a.info:hover {
+  background: $bg-color4;
+}
+
+.warn {
+  background: $bg-color6;
+  color: $color;
+}
+a.warn:hover {
+  background: $bg-color7;
+}
